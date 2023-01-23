@@ -1,1 +1,1 @@
-Portfolio Website: https://www.omarkhh.netlify.app
+Portfolio Website: https://omarkh01.github.io/
