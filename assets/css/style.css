@@ -496,6 +496,7 @@ section {
 }
 
 .portfolio .portfolio-wrap {
+  height: 250px;
   transition: 0.3s;
   position: relative;
   overflow: hidden;
@@ -515,8 +516,8 @@ section {
   opacity: 0;
 }
 
-.portfolio .portfolio-wrap-2::before {
-  background: rgb(255, 255, 255, 0.90);
+.img-fluid {
+  height: 100%;
 }
 
 .portfolio .portfolio-wrap-2 .alert {
@@ -532,7 +533,7 @@ section {
 
 .portfolio .portfolio-wrap-2:hover .alert {
   opacity: 1;
-}
+} 
 
 .portfolio .portfolio-wrap-2:not(:hover) .alert {
   opacity: 0;
@@ -576,7 +577,7 @@ section {
   opacity: 1;
 }
 
-.portfolio .portfolio-wrap-1:hover .portfolio-links {
+.portfolio .portfolio-wrap-1:hover .portfolio-links{
   opacity: 1;
   bottom: 0;
 }
