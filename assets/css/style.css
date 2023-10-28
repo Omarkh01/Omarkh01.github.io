@@ -333,12 +333,12 @@ section {
   font-family: 'Fredoka One', cursive;
   color: #1a53a2;
   margin: auto;
-  width: 50%;
+  width: 75%;
 }
 
 .about .content p {
   margin: auto;
-  width: 50%;
+  width: 75%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -368,72 +368,6 @@ section {
   margin-bottom: 0;
 }
 
-@media (max-width: 990px) {
-  .about .row div:nth-child(1) {
-    padding: 0 130px;
-  }
-
-  .about .content h3, .about .content p {
-    width: 75%;
-  }
-}
-
-@media (max-width: 768px) {
-  .about .row div:nth-child(1) {
-    padding: 0 0;
-  }
-}
-
-/*--------------------------------------------------------------
-# Facts
---------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
-}
-
-.facts .count-box {
-  padding: 30px;
-  width: 100%;
-}
-
-.facts .count-box i {
-  display: block;
-  font-size: 44px;
-  color: #149ddd;
-  float: left;
-  line-height: 0;
-}
-
-.facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-
-.facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #122f57;
-}
-
-.facts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
-}
-
-.facts .count-box a:hover {
-  color: #1f5297;
-}
 
 /*--------------------------------------------------------------
 # Skills
@@ -473,11 +407,11 @@ section {
 }
 
 .skills .btn{
-  --bs-btn-font-size: 13px;
-  border-color: #149ddd;
-  font-weight: 500;
+  --bs-btn-font-size: 14px;
+  font-weight: 400;
+  color: #149ddd;
+  background-color: #fff
 }
-
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -519,7 +453,7 @@ section {
 }
 
 .portfolio .portfolio-wrap {
-  height: 250px;
+  height: 200px;
   transition: 0.3s;
   position: relative;
   overflow: hidden;
@@ -543,7 +477,7 @@ section {
   height: 100%;
 }
 
-.portfolio .portfolio-wrap-2 .alert {
+.portfolio .portfolio-wrap .alert {
   z-index: 2;
   position: absolute;
   font-weight: 800;
@@ -554,11 +488,11 @@ section {
   transition: opacity 1.5s;
 }
 
-.portfolio .portfolio-wrap-2:hover .alert {
+.portfolio .portfolio-wrap:hover .alert {
   opacity: 1;
 } 
 
-.portfolio .portfolio-wrap-2:not(:hover) .alert {
+.portfolio .portfolio-wrap:not(:hover) .alert {
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -603,6 +537,12 @@ section {
 .portfolio .portfolio-wrap-1:hover .portfolio-links{
   opacity: 1;
   bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .portfolio .portfolio-wrap img {
+    height: 250px;
+  }
 }
 
 /*--------------------------------------------------------------
