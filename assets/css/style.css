@@ -133,6 +133,7 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -367,6 +368,22 @@ section {
   margin-bottom: 0;
 }
 
+@media (max-width: 990px) {
+  .about .row div:nth-child(1) {
+    padding: 0 130px;
+  }
+
+  .about .content h3, .about .content p {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about .row div:nth-child(1) {
+    padding: 0 0;
+  }
+}
+
 /*--------------------------------------------------------------
 # Facts
 --------------------------------------------------------------*/
@@ -453,6 +470,12 @@ section {
   height: 10px;
   transition: 0.9s;
   background-color: #149ddd;
+}
+
+.skills .btn{
+  --bs-btn-font-size: 13px;
+  border-color: #149ddd;
+  font-weight: 500;
 }
 
 
