@@ -67,6 +67,17 @@
     })
   }
 
+/**
+ * Go back to the previous page
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  let goBackBtn = document.getElementById("go-back");
+  goBackBtn.addEventListener("click", () => {
+    history.back();
+  });
+});
+
+
   /**
    * Back to top button
    */

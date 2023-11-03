@@ -837,6 +837,11 @@ section {
   content: "/";
 }
 
+#go-back {
+  cursor: pointer;
+  color: #149ddd;
+}
+
 @media (max-width: 768px) {
   .breadcrumbs .d-flex {
     display: block !important;
