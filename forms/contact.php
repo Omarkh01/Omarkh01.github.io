@@ -1,43 +1,45 @@
 <?php
-  
-  // Replace contact@example.com with your real receiving email address
-$receiving_email_address = 'omar.khuatbek@gmail.com';
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
 $name = $_POST["name"];
 $email = $_POST["email"];
 $subject = $_POST["subject"];
 $message = $_POST["message"];
 
-require "vendor/autoload.php";
+try {
+    //Server settings
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'omar.khuatbek@gmail.com';                     //SMTP username
+    $mail->Password   = 'fsculrasjzlzfewf';                               //SMTP password
+    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+    //Recipients
+    $mail->setFrom($email, $name);
+    $mail->addAddress('omar.khuatbek@gmail.com');     //Add a recipient
+    $mail->addReplyTo($email, $name);
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-  $contact = new PHPMailer(true);
-  
-  $contact->isSMTP();
-  $contact->SMTPAuth = true;
-  // $contact->Host = "smtp.gmail.com";
+    $mail->send();
+    echo 'Message has been sent';
 
-  //Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  
-  $contact->smtp = array(
-    'host' => 'smtp.gmail.com',
-    'username' => 'omar.khuatbek@gmail.com',
-    'password' => 'fscu lras jzlz fewf',
-    'port' => '587',
-  );
-  
-
-  $contact->add_message( $name, 'From');
-  $contact->add_message( $email, 'Email');
-  $contact->add_message( $message, 'Message', 10);
-
-  echo $contact->send();
-?>
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}

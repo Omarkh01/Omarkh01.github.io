@@ -68,7 +68,7 @@
   }
 
 /**
- * Go back to the previous page
+ * Go back to the previous pages
  */
 document.addEventListener("DOMContentLoaded", () => {
   let goBackBtn = document.getElementById("go-back");
